@@ -1,1 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=WDXL+Lubrifont+SC&display=swap');
 @import "tailwindcss";
+@theme{
+    --font-display: "WDXL Lubrifont SC", sans-serif;
+}
