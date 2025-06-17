@@ -65,7 +65,7 @@ const Body = () => {
        <Cards type="Savings" value={Income - Expense}/> 
         </div>
         <div>
-          <table className='border border-2 w-[90%] mx-auto'>
+          <table className='border-2 w-[90%] mx-auto'>
             <thead>
             <tr>
 
