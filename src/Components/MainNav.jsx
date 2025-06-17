@@ -4,7 +4,7 @@ const MainNav = () => {
   return (
    
       <nav className='abosolute'>
-        <ul className='flex justify-between p-5 bg-black text-white'>
+        <ul className='flex justify-between p-5 bg-black text-white max-sm:flex-col text-center'>
           <li>
             Logo
           </li>
