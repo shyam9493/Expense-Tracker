@@ -1,8 +1,7 @@
 import { Routes,Route } from 'react-router-dom'
 import './App.css'
 import Login from './Components/Login'
-import Main from './Components/Main'
-import MainNav from './Components/MainNav'
+import Dashboard from './Components/Dashboard'
 
 
 
@@ -14,7 +13,7 @@ function App() {
     <>
       <Routes>
         <Route path='/' element= {<Login />} />
-        <Route path='/main' element= {<MainNav />} />  
+        <Route path='/dash' element= {<Dashboard />} />  
       </Routes>
       
     </>
