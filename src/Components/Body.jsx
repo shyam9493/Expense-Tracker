@@ -7,28 +7,35 @@ import Cards from './Cards'
 const Body = () => {
 
 
-
+  const [Amount,setAmount]=useState("");
+  const [type,setType]=useState("");
   const [Income,setIncome]=useState(0);
   const [Expense,setExpense]=useState(0);
   const [Transactions,setTransactions] = useState([]);
 
 
-  const handleInput = ()=>{
-    if(!Income && !Expense){
+  const handleInput = ()=>{    
+    if(!Amount || type == ""){
       alert("Fields should not be empty");
     }else{
+      
+
+      (type=="Income")?setIncome(Income+Number(Amount)):setExpense(Expense+Number(Amount));
+      
+     
      setTransactions([...Transactions,{
-        Amount : 100,
-        type : "Income",
+        Amount : Amount,
+        type : type,
         date : new Date().toLocaleDateString('IND'),
-      }])
+      }]);
+      setAmount('');
+      setType('');
     }    
   }
 
 
   useEffect(()=>{
-    console.log(1);
-    
+    // console.log(1);
     console.log(Transactions);  
   },[Transactions]);
   return (
@@ -36,9 +43,14 @@ const Body = () => {
         <div className='w-[70vw] bg-amber-500 mx-auto gap-5 flex items-center p-10 mt-10 max-sm:flex-col' >
           
 
-            <input type="number" placeholder='Enter the amount' className='w-[40%] p-1.5 border max-sm:w-[100%] m-0' required/> 
-            <select className='w-[35%]  p-1.5 border max-sm:w-[100%]' required>
-                <option value="" >Select</option>
+            <input type="number" placeholder='Enter the amount' className='w-[40%] p-1.5 border max-sm:w-[100%] m-0' value={Amount} 
+            onChange={(e)=>{
+              setAmount(e.target.value);
+            }}/> 
+            <select className='w-[35%]  p-1.5 border max-sm:w-[100%]' required value={type} onChange={(e)=>{
+              setType(e.target.value);
+            }}>
+                <option>Select</option>
                 <option>Income</option>
                 <option>Expense</option>
             </select>
